@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TaksiServis.Modeli;
 using TaksiServis.Repozitoriumi.Interfejsi;
+using TaksiServis.Repozitoriumi.Migrations;
 using TaksiServis.Servisi.Interface;
 
 namespace TaksiServis.Servisi.Servisi
@@ -38,9 +39,20 @@ namespace TaksiServis.Servisi.Servisi
 
         }
 
-        public Task KreirajNovoVozilo(Vozilo KartaModel)
+        public Task KreirajNovoVozilo(Vozilo voziloModel)
         {
-            throw new NotImplementedException();
+            Vozilo voziloZaDodati = new()
+            {
+                Id = voziloModel.Id,
+                Model = voziloModel.Model,
+                Marka = voziloModel.Marka,
+                Registracija = voziloModel.Registracija,
+
+            };
+
+            _taksiRepozitory.Dodaj(voziloZaDodati);
+            _taksiRepozitory.Sacuvaj();
+            return Task.CompletedTask;
         }
 
         public void ObrisiVozilo(object ID)

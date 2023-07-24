@@ -13,7 +13,7 @@ namespace TaksiServis.Servisi.Interface
         Task<IEnumerable<Vozilo>> prikazSvihVozilaPoRegistraciji(object registracija);
         Task<IEnumerable<Vozilo>> prikazSvihVozilaPoModelu(object model);
         Task AzurirajVozilo(Vozilo obj, object ID);
-        Task KreirajNovoVozilo(Vozilo KartaModel);
+        Task KreirajNovoVozilo(Vozilo voziloModel);
         void ObrisiVozilo(object ID);
     }
 }
