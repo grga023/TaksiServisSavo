@@ -1,5 +1,4 @@
 using Autofac;
-using System.ComponentModel;
 using TaksiServis.Repozitoriumi.Context;
 using TaksiServis.Repozitoriumi.Interfejsi;
 using TaksiServis.Repozitoriumi.Repozitorijumi;
@@ -10,7 +9,7 @@ namespace TaksiServis.KorisnickiInterfejs
 {
     internal static class Program
     {
-        private static Autofac.IContainer _container;
+        private static IContainer _container;
 
         [STAThread]
         static void Main()
@@ -28,10 +27,8 @@ namespace TaksiServis.KorisnickiInterfejs
             _container = builder.Build();
 
             // Resolve the main form from the container
-            using (var form = _container.Resolve<Form>())
-            {
-                Application.Run(form);
-            }
+            using var form = _container.Resolve<Form>();
+            Application.Run(form);
 
         }
     }
