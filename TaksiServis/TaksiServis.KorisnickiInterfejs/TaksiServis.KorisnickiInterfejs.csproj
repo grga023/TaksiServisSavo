@@ -8,4 +8,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaksiServis.Repozitoriumi\TaksiServis.Repozitoriumi.csproj" />
+    <ProjectReference Include="..\TaksiServis.Servisi\TaksiServis.Servisi.csproj" />
+  </ItemGroup>
+
 </Project>
