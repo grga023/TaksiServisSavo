@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaksiServis.Repozitoriumi", "TaksiServis.Repozitoriumi\TaksiServis.Repozitoriumi.csproj", "{1453EAA2-9983-4F0D-A23D-7D483CC661E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaksiServis.Repozitoriumi", "TaksiServis.Repozitoriumi\TaksiServis.Repozitoriumi.csproj", "{1453EAA2-9983-4F0D-A23D-7D483CC661E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaksiServis.Modeli", "TaksiServis.Modeli\TaksiServis.Modeli.csproj", "{613633CD-5DA7-45C3-ABF0-B1F18A26510C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaksiServis.Modeli", "TaksiServis.Modeli\TaksiServis.Modeli.csproj", "{613633CD-5DA7-45C3-ABF0-B1F18A26510C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaksiServis.Servisi", "TaksiServis.Servisi\TaksiServis.Servisi.csproj", "{15F41078-1ACC-4256-9F5E-A3329A5B78B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{613633CD-5DA7-45C3-ABF0-B1F18A26510C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{613633CD-5DA7-45C3-ABF0-B1F18A26510C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{613633CD-5DA7-45C3-ABF0-B1F18A26510C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F41078-1ACC-4256-9F5E-A3329A5B78B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F41078-1ACC-4256-9F5E-A3329A5B78B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F41078-1ACC-4256-9F5E-A3329A5B78B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F41078-1ACC-4256-9F5E-A3329A5B78B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
