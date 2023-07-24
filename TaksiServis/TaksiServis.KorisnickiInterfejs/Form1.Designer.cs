@@ -55,6 +55,7 @@
             TableView.RowTemplate.Height = 25;
             TableView.Size = new Size(715, 562);
             TableView.TabIndex = 0;
+            TableView.CellContentClick += TableView_CellContentClick;
             // 
             // label1
             // 
