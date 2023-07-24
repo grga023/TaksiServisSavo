@@ -138,6 +138,7 @@
             btnDodaj.TabIndex = 9;
             btnDodaj.Text = "DODAJ";
             btnDodaj.UseVisualStyleBackColor = true;
+            btnDodaj.Click += this.btnDodaj_Click;
             // 
             // btnIzmeni
             // 

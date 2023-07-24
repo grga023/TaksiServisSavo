@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using TaksiServis.Modeli;
 using TaksiServis.Servisi.Interface;
 
 namespace TaksiServis.KorisnickiInterfejs
@@ -30,6 +31,27 @@ namespace TaksiServis.KorisnickiInterfejs
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private async void btnDodaj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Vozilo VoziloZaDodat = new()
+                {
+                    Marka = txtMarka.Text,
+                    Model = txtModel.Text,
+                    Registracija = txtRegistracija.Text,
+                };
+
+
+                await _taksiServis.KreirajNovoVozilo(VoziloZaDodat);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            _ = Prikaz();
         }
     }
 }
