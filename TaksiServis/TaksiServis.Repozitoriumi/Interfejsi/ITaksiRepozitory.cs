@@ -9,5 +9,6 @@ namespace TaksiServis.Repozitoriumi.Interfejsi
 {
     public interface ITaksiRepozitory : IRepository<Vozilo>
     {
+
     }
 }
