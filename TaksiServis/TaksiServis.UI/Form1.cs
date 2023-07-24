@@ -10,5 +10,7 @@ namespace TaksiServis.UI
             _taksiServis = taksiServis;
             InitializeComponent();
         }
+
+
     }
 }
