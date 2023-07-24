@@ -1,10 +1,14 @@
+using TaksiServis.Servisi.Interface;
+
 namespace TaksiServis.KorisnickiInterfejs
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private readonly ITaksiServis _taksiServis;
+        public Form1(ITaksiServis taksiServis)
         {
             InitializeComponent();
+            _taksiServis = taksiServis;
         }
     }
 }
