@@ -57,12 +57,30 @@ namespace TaksiServis.Servisi.Servisi
 
         public void ObrisiVozilo(object ID)
         {
-            throw new NotImplementedException();
+            _taksiRepozitory.Obrisi(ID);
+            _taksiRepozitory.Sacuvaj();
         }
 
-        public Task<IEnumerable<Vozilo>> PrikazSvihVozilaAsync()
+        public async Task<IEnumerable<Vozilo>> PrikazSvihVozilaAsync()
         {
-            throw new NotImplementedException();
+            var data = await _taksiRepozitory.prikazSvihVozila();
+            if (data is null) throw new ArgumentNullException();
+
+            List<Vozilo> vozila = new();
+            Vozilo vozilo;
+
+            foreach (var item in data)
+            {
+                vozilo = new Vozilo
+                {
+                    Id = item.Id,
+                    Model = item.Model,
+                    Marka = item.Marka,
+                    Registracija = item.Registracija,
+                };
+                vozila.Add(vozilo);
+            }
+            return vozila.ToList();
         }
 
         public Task<IEnumerable<Vozilo>> prikazSvihVozilaPoModelu(object model)
