@@ -83,14 +83,48 @@ namespace TaksiServis.Servisi.Servisi
             return vozila.ToList();
         }
 
-        public Task<IEnumerable<Vozilo>> prikazSvihVozilaPoModelu(object model)
+        public async Task<IEnumerable<Vozilo>> prikazSvihVozilaPoModelu(object model)
         {
-            throw new NotImplementedException();
+            var data = await _taksiRepozitory.prikazVozilaPoModelu(model);
+            if (data is null) throw new ArgumentNullException();
+
+            List<Vozilo> vozila = new();
+            Vozilo vozilo;
+
+            foreach (var item in data)
+            {
+                vozilo = new Vozilo
+                {
+                    Id = item.Id,
+                    Model = item.Model,
+                    Marka = item.Marka,
+                    Registracija = item.Registracija,
+                };
+                vozila.Add(vozilo);
+            }
+            return vozila.ToList();
         }
 
-        public Task<IEnumerable<Vozilo>> prikazSvihVozilaPoRegistraciji(object registracija)
+        public async Task<IEnumerable<Vozilo>> prikazSvihVozilaPoRegistraciji(object registracija)
         {
-            throw new NotImplementedException();
+            var data = await _taksiRepozitory.prikazVozilaPoRegistraciji(registracija);
+            if (data is null) throw new ArgumentNullException();
+
+            List<Vozilo> vozila = new();
+            Vozilo vozilo;
+
+            foreach (var item in data)
+            {
+                vozilo = new Vozilo
+                {
+                    Id = item.Id,
+                    Model = item.Model,
+                    Marka = item.Marka,
+                    Registracija = item.Registracija,
+                };
+                vozila.Add(vozilo);
+            }
+            return vozila.ToList();
         }
     }
 }
