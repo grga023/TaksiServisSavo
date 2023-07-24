@@ -1,53 +1,90 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaksiServis.Modeli;
+using TaksiServis.Repozitoriumi.Context;
 using TaksiServis.Repozitoriumi.Interfejsi;
 
 namespace TaksiServis.Repozitoriumi.Repozitorijumi
 {
     public class TaksiRepozitorijum : ITaksiRepozitory
     {
+        private readonly TaksiDBCotext _ctx;
+
+        public TaksiRepozitorijum(TaksiDBCotext ctx)
+        {
+            _ctx = ctx;
+        }
+
         public Vozilo Azuriraj(Vozilo obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _ctx.Entry(obj).State = EntityState.Modified;
+
+                return obj;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public Vozilo Dodaj(Vozilo obj)
         {
-            throw new NotImplementedException();
+            return _ctx.Vozilo.Add(obj).Entity;
         }
 
         public void Obrisi(object PK)
         {
-            throw new NotImplementedException();
+            var postoji = _ctx.Vozilo.Find(PK);
+            if (postoji is null)
+                throw new ArgumentNullException();
+
+            _ctx.Vozilo.Remove(postoji);
         }
 
         public Vozilo PrikaziPoIDAsync(object ID)
         {
-            throw new NotImplementedException();
+            var postoji = _ctx.Vozilo.Find(ID);
+            if (postoji is not null)
+            {
+                _ctx.Entry(postoji).State = EntityState.Detached;
+                return postoji;
+            }
+            else throw new ArgumentNullException();
         }
 
-        public Task<IEnumerable<Vozilo>> prikazSvihVozila()
+        public async Task<IEnumerable<Vozilo>> prikazSvihVozila()
         {
-            throw new NotImplementedException();
+            var data = await _ctx.Vozilo     
+                            .ToListAsync();
+
+            return data;
         }
 
-        public Task<IEnumerable<Vozilo>> prikazVozilaPoModelu(object model)
+        public async Task<IEnumerable<Vozilo>> prikazVozilaPoModelu(object model)
         {
-            throw new NotImplementedException();
+            var data = await _ctx.Vozilo
+                    .Where(x => x.Model== model).ToListAsync();
+
+            return data;
         }
 
-        public Task<IEnumerable<Vozilo>> prikazVozilaPoRegistraciji(object registracija)
+        public async Task<IEnumerable<Vozilo>> prikazVozilaPoRegistraciji(object registracija)
         {
-            throw new NotImplementedException();
+            var data = await _ctx.Vozilo
+                    .Where(x => x.Registracija == registracija).ToListAsync();
+
+            return data;
         }
 
         public void Sacuvaj()
         {
-            throw new NotImplementedException();
+            _ctx.SaveChanges();
         }
     }
 }
