@@ -40,6 +40,10 @@
             btnDodaj = new Button();
             btnIzmeni = new Button();
             btnObrisi = new Button();
+            txtFilterBox = new TextBox();
+            label5 = new Label();
+            cbxFilter = new ComboBox();
+            btnFiltriraj = new Button();
             ((System.ComponentModel.ISupportInitialize)TableView).BeginInit();
             SuspendLayout();
             // 
@@ -95,7 +99,7 @@
             // txtID
             // 
             txtID.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            txtID.Location = new Point(315, 29);
+            txtID.Location = new Point(338, 29);
             txtID.Name = "txtID";
             txtID.Size = new Size(276, 34);
             txtID.TabIndex = 5;
@@ -103,7 +107,7 @@
             // txtMarka
             // 
             txtMarka.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMarka.Location = new Point(315, 81);
+            txtMarka.Location = new Point(338, 81);
             txtMarka.Name = "txtMarka";
             txtMarka.Size = new Size(276, 34);
             txtMarka.TabIndex = 6;
@@ -111,7 +115,7 @@
             // txtModel
             // 
             txtModel.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            txtModel.Location = new Point(315, 132);
+            txtModel.Location = new Point(338, 132);
             txtModel.Name = "txtModel";
             txtModel.Size = new Size(276, 34);
             txtModel.TabIndex = 7;
@@ -119,7 +123,7 @@
             // txtRegistracija
             // 
             txtRegistracija.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRegistracija.Location = new Point(315, 181);
+            txtRegistracija.Location = new Point(338, 181);
             txtRegistracija.Name = "txtRegistracija";
             txtRegistracija.Size = new Size(276, 34);
             txtRegistracija.TabIndex = 8;
@@ -154,11 +158,53 @@
             btnObrisi.Text = "OBRISI";
             btnObrisi.UseVisualStyleBackColor = true;
             // 
+            // txtFilterBox
+            // 
+            txtFilterBox.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            txtFilterBox.Location = new Point(338, 405);
+            txtFilterBox.Name = "txtFilterBox";
+            txtFilterBox.Size = new Size(276, 34);
+            txtFilterBox.TabIndex = 12;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(23, 405);
+            label5.Name = "label5";
+            label5.Size = new Size(225, 36);
+            label5.TabIndex = 13;
+            label5.Text = "FILTRIRANJE";
+            // 
+            // cbxFilter
+            // 
+            cbxFilter.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            cbxFilter.FormattingEnabled = true;
+            cbxFilter.Items.AddRange(new object[] { "Marka", "Registracija" });
+            cbxFilter.Location = new Point(338, 459);
+            cbxFilter.Name = "cbxFilter";
+            cbxFilter.Size = new Size(273, 32);
+            cbxFilter.TabIndex = 14;
+            // 
+            // btnFiltriraj
+            // 
+            btnFiltriraj.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltriraj.Location = new Point(417, 509);
+            btnFiltriraj.Name = "btnFiltriraj";
+            btnFiltriraj.Size = new Size(197, 49);
+            btnFiltriraj.TabIndex = 15;
+            btnFiltriraj.Text = "FILTRIRAJ";
+            btnFiltriraj.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1347, 581);
+            Controls.Add(btnFiltriraj);
+            Controls.Add(cbxFilter);
+            Controls.Add(label5);
+            Controls.Add(txtFilterBox);
             Controls.Add(btnObrisi);
             Controls.Add(btnIzmeni);
             Controls.Add(btnDodaj);
@@ -192,5 +238,9 @@
         private Button btnDodaj;
         private Button btnIzmeni;
         private Button btnObrisi;
+        private TextBox txtFilterBox;
+        private Label label5;
+        private ComboBox cbxFilter;
+        private Button btnFiltriraj;
     }
 }
