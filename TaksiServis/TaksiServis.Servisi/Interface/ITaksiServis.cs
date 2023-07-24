@@ -12,9 +12,8 @@ namespace TaksiServis.Servisi.Interface
         Task<IEnumerable<Vozilo>> PrikazSvihVozilaAsync();
         Task<IEnumerable<Vozilo>> prikazSvihVozilaPoRegistraciji(object registracija);
         Task<IEnumerable<Vozilo>> prikazSvihVozilaPoModelu(object model);
-        Task AzurirajFilm(Vozilo obj, object ID);
-        Task KreirajNovFilm(Vozilo KartaModel);
-        void ObrisiFilm(object ID);
-        bool PostojiFilmUBaziPodataka();
+        Task AzurirajVozilo(Vozilo obj, object ID);
+        Task KreirajNovoVozilo(Vozilo KartaModel);
+        void ObrisiVozilo(object ID);
     }
 }

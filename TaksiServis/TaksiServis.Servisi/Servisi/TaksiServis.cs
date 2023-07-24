@@ -18,22 +18,32 @@ namespace TaksiServis.Servisi.Servisi
             _taksiRepozitory = taksiRepozitory;
         }
 
-        public Task AzurirajFilm(Vozilo obj, object ID)
+        public Task AzurirajVozilo(Vozilo obj, object ID)
+        {
+            var data = _taksiRepozitory.PrikaziPoIDAsync(ID);
+            if (data == null) throw new ArgumentNullException();
+
+            Vozilo volziloZaIzmenu = new()
+            {
+                Id = data.Id,
+                Model = obj.Model,
+                Marka = obj.Marka,
+                Registracija = obj.Registracija,
+
+            };
+
+            _taksiRepozitory.Azuriraj(volziloZaIzmenu);
+            _taksiRepozitory.Sacuvaj();
+            return Task.CompletedTask;
+
+        }
+
+        public Task KreirajNovoVozilo(Vozilo KartaModel)
         {
             throw new NotImplementedException();
         }
 
-        public Task KreirajNovFilm(Vozilo KartaModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ObrisiFilm(object ID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool PostojiFilmUBaziPodataka()
+        public void ObrisiVozilo(object ID)
         {
             throw new NotImplementedException();
         }
