@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TaksiServis.Modeli\TaksiServis.Modeli.csproj" />
+    <ProjectReference Include="..\TaksiServis.Repozitoriumi\TaksiServis.Repozitoriumi.csproj" />
+  </ItemGroup>
+
 </Project>

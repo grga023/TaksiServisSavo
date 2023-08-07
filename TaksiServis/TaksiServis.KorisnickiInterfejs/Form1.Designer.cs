@@ -44,6 +44,8 @@
             label5 = new Label();
             cbxFilter = new ComboBox();
             btnFiltriraj = new Button();
+            label6 = new Label();
+            txtGodiste = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)TableView).BeginInit();
             SuspendLayout();
             // 
@@ -91,7 +93,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(23, 181);
+            label4.Location = new Point(23, 235);
             label4.Name = "label4";
             label4.Size = new Size(252, 36);
             label4.TabIndex = 4;
@@ -124,7 +126,7 @@
             // txtRegistracija
             // 
             txtRegistracija.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRegistracija.Location = new Point(338, 181);
+            txtRegistracija.Location = new Point(338, 235);
             txtRegistracija.Name = "txtRegistracija";
             txtRegistracija.Size = new Size(276, 34);
             txtRegistracija.TabIndex = 8;
@@ -132,38 +134,40 @@
             // btnDodaj
             // 
             btnDodaj.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDodaj.Location = new Point(12, 245);
+            btnDodaj.Location = new Point(12, 299);
             btnDodaj.Name = "btnDodaj";
             btnDodaj.Size = new Size(197, 49);
             btnDodaj.TabIndex = 9;
             btnDodaj.Text = "DODAJ";
             btnDodaj.UseVisualStyleBackColor = true;
-            btnDodaj.Click += this.btnDodaj_Click;
+            btnDodaj.Click += btnDodaj_Click;
             // 
             // btnIzmeni
             // 
             btnIzmeni.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIzmeni.Location = new Point(215, 245);
+            btnIzmeni.Location = new Point(215, 299);
             btnIzmeni.Name = "btnIzmeni";
             btnIzmeni.Size = new Size(197, 49);
             btnIzmeni.TabIndex = 10;
             btnIzmeni.Text = "IZMENI";
             btnIzmeni.UseVisualStyleBackColor = true;
+            btnIzmeni.Click += btnIzmeni_Click;
             // 
             // btnObrisi
             // 
             btnObrisi.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnObrisi.Location = new Point(417, 245);
+            btnObrisi.Location = new Point(417, 299);
             btnObrisi.Name = "btnObrisi";
             btnObrisi.Size = new Size(197, 49);
             btnObrisi.TabIndex = 11;
             btnObrisi.Text = "OBRISI";
             btnObrisi.UseVisualStyleBackColor = true;
+            btnObrisi.Click += btnObrisi_Click;
             // 
             // txtFilterBox
             // 
             txtFilterBox.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFilterBox.Location = new Point(338, 405);
+            txtFilterBox.Location = new Point(338, 459);
             txtFilterBox.Name = "txtFilterBox";
             txtFilterBox.Size = new Size(276, 34);
             txtFilterBox.TabIndex = 12;
@@ -183,7 +187,7 @@
             cbxFilter.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             cbxFilter.FormattingEnabled = true;
             cbxFilter.Items.AddRange(new object[] { "Marka", "Registracija" });
-            cbxFilter.Location = new Point(338, 459);
+            cbxFilter.Location = new Point(338, 405);
             cbxFilter.Name = "cbxFilter";
             cbxFilter.Size = new Size(273, 32);
             cbxFilter.TabIndex = 14;
@@ -197,12 +201,33 @@
             btnFiltriraj.TabIndex = 15;
             btnFiltriraj.Text = "FILTRIRAJ";
             btnFiltriraj.UseVisualStyleBackColor = true;
+            btnFiltriraj.Click += btnFiltriraj_ClickAsync;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(20, 185);
+            label6.Name = "label6";
+            label6.Size = new Size(158, 36);
+            label6.TabIndex = 16;
+            label6.Text = "GODISTE";
+            // 
+            // txtGodiste
+            // 
+            txtGodiste.CalendarFont = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtGodiste.Location = new Point(338, 185);
+            txtGodiste.Name = "txtGodiste";
+            txtGodiste.Size = new Size(276, 23);
+            txtGodiste.TabIndex = 17;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1347, 581);
+            Controls.Add(txtGodiste);
+            Controls.Add(label6);
             Controls.Add(btnFiltriraj);
             Controls.Add(cbxFilter);
             Controls.Add(label5);
@@ -244,5 +269,7 @@
         private Label label5;
         private ComboBox cbxFilter;
         private Button btnFiltriraj;
+        private Label label6;
+        private DateTimePicker txtGodiste;
     }
 }

@@ -29,6 +29,7 @@ namespace TaksiServis.Servisi.Servisi
                 Id = data.Id,
                 Model = obj.Model,
                 Marka = obj.Marka,
+                Gdiste = obj.Gdiste,
                 Registracija = obj.Registracija,
 
             };
@@ -46,6 +47,7 @@ namespace TaksiServis.Servisi.Servisi
                 Id = voziloModel.Id,
                 Model = voziloModel.Model,
                 Marka = voziloModel.Marka,
+                Gdiste = voziloModel.Gdiste,
                 Registracija = voziloModel.Registracija,
 
             };
@@ -76,6 +78,7 @@ namespace TaksiServis.Servisi.Servisi
                     Id = item.Id,
                     Model = item.Model,
                     Marka = item.Marka,
+                    Gdiste = item.Gdiste,
                     Registracija = item.Registracija,
                 };
                 vozila.Add(vozilo);
@@ -98,6 +101,7 @@ namespace TaksiServis.Servisi.Servisi
                     Id = item.Id,
                     Model = item.Model,
                     Marka = item.Marka,
+                    Gdiste = item.Gdiste,
                     Registracija = item.Registracija,
                 };
                 vozila.Add(vozilo);
@@ -120,6 +124,7 @@ namespace TaksiServis.Servisi.Servisi
                     Id = item.Id,
                     Model = item.Model,
                     Marka = item.Marka,
+                    Gdiste = item.Gdiste,
                     Registracija = item.Registracija,
                 };
                 vozila.Add(vozilo);
