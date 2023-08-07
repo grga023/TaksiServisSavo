@@ -33,7 +33,7 @@ namespace TaksiServis.KorisnickiInterfejs
                 txtID.Text = selektovaniRed.Cells["ID"].Value.ToString();
                 txtMarka.Text = selektovaniRed.Cells["Marka"].Value.ToString();
                 txtModel.Text = selektovaniRed.Cells["Model"].Value.ToString();
-                txtGodiste.Text = selektovaniRed.Cells["Godiste"].Value.ToString();
+                txtGodiste.Value = selektovaniRed.Cells["Godiste"].Value.ToString();
                 txtRegistracija.Text = selektovaniRed.Cells["Registracija"].Value.ToString();
 
             }
@@ -86,7 +86,7 @@ namespace TaksiServis.KorisnickiInterfejs
                 {
                     Marka = txtMarka.Text,
                     Model = txtModel.Text,
-                    Gdiste = DateTime.Parse(txtGodiste.Text),
+                    Gdiste = DateTime.Parse(txtGodiste.Text),   
                     Registracija = txtRegistracija.Text,
                 };
 
